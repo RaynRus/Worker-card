@@ -11,7 +11,7 @@
 <div class="container mt-5">
   <h2 class="mb-4">Форма для создания карточки разработчика</h2>
 
-  <form action="/" method="post">
+  <form action="/" method="post" enctype="multipart/form-data">
     <div class="mb-3">
       <label for="first_name" class="form-label">Имя:</label>
       <input type="text" class="form-control" id="first_name" name="first_name">
@@ -54,6 +54,10 @@
         <option value="intermediate">Средний</option>
         <option value="advanced">Продвинутый</option>
       </select>
+    </div>
+    <div class="mb-3">
+      <label for="photo" class="form-label">Фотография:</label>
+      <input type="file" class="form-control" id="photo" name="photo">
     </div>
     <button type="submit" class="btn btn-primary">Создать карточку</button>
   </form>

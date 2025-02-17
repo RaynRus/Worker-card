@@ -8,18 +8,22 @@
 </head>
 <body>
 
-  <div class="container mt-5">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title mb-3">Карточка разработчика</h5>
-        <p class="card-text">Имя: {{ first_name }}</p>
-        <p class="card-text">Фамилия: {{ last_name }}</p>
-        <p class="card-text">О себе: {{ about }}</p>
-        <p class="card-text">Стэк технологий: {{ stack }}</p>
-        <p class="card-text">Уровень разработки: {{ development_level }}</p>
-      </div>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+        <div class="row">
+              <img src="{{ url_for('static', filename='photo_image.png') }}" class="card-img-top img-fluid" alt="Фото разработчика" style="object-fit: cover;">
+
+              <h3 class="card-title mb-3 mt-3">Карточка разработчика</h3>
+              <p class="card-text">Имя: {{ first_name }}</p>
+              <p class="card-text">Фамилия: {{ last_name }}</p>
+              <p class="card-text">О себе: {{ about }}</p>
+              <p class="card-text">Стэк технологий: {{ stack }}</p>
+              <p class="card-text">Уровень разработки: {{ development_level }}</p>
+        </div>
     </div>
   </div>
+</div>
 
 </body>
 </html>

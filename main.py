@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, url_for, render_template
 
 app = Flask("main")
 
@@ -14,6 +14,10 @@ def index():
         about = request.form.get('about')
         stack = ', '.join(request.form.getlist('technology_stack'))
         dev_level = request.form.get('development_level')
+        photo = request.files.get('photo')
+
+        with open(f".{url_for('static', filename='photo_image.png')}", mode='wb') as file:
+            file.write(photo.read())
 
         return render_template(
           "card.html", 
@@ -26,5 +30,4 @@ def index():
 
 
 
-app.run(host='0.0.0.0', port=8080, debug=True)
-
+app.run(host='0.0.0.0', port=8080)
